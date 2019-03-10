@@ -1,0 +1,83 @@
+html{ 
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	min-height: 100vh;
+}
+*, *:before, *:after{
+	box-sizing:inherit;
+}
+
+body{
+	/*background: linear-gradient(45deg, #0080ff, #45d9fd);*/
+	/*background: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);*/
+	/*background: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);*/
+	/*background: linear-gradient(60deg, #29323c 0%, #485563 100%);*/
+	/*background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);*/
+	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+
+/*Styles for Login Page*/
+
+#wrapper{
+	height:90vh;
+	margin:5vh auto;
+	/*border-radius: 20px;
+	border:2px #fff solid;*/
+}
+
+#wrapper .row{
+	height: 100%;
+	align-items: center;
+}
+
+#formCol{
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#formArea{
+	border-radius: 10px;
+	height:75%;
+	width: 80%;
+	margin:auto;
+	border: double 5px transparent;
+	border-radius: 1em;
+	background-image: linear-gradient(#f8faff, #f8faff), radial-gradient(circle at top left, #0ba360,#3cba92);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+label{
+	font-size: 1.5em;
+}
+
+.form-group{
+	width:90%;
+	margin:1rem auto;
+}
+
+button{
+	max-width: 175px;
+	font-size: 1.5em;
+	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+	border-color:#fff !important;
+}
+
+a{
+	color: #0ba360;
+}
+
+.heading{
+	width:90%;
+	margin:auto;
+}
+
+h1{
+	line-height: 2rem;
+	font-size: 4em;
+}
+h1 small{
+	font-size: .3em;
+}
