@@ -58,11 +58,11 @@ label{
 	margin:1rem auto;
 }
 
-button{
+button, input[type="submit"]{
 	max-width: 175px;
-	font-size: 1.5em;
 	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 	border-color:#fff !important;
+	margin-bottom: 1em;
 }
 
 a{
@@ -74,10 +74,27 @@ a{
 	margin:auto;
 }
 
-h1{
+#content h1{
 	line-height: 2rem;
 	font-size: 4em;
 }
-h1 small{
+#content h1 small{
 	font-size: .3em;
 }
+
+/*Sign Up Page Styles*/
+
+header {
+	padding: 30px;
+	padding-bottom: 0px;
+}
+
+fieldset .form-group{
+	width: 100%;
+}
+
+#sign-up{
+	margin-bottom: 30px;
+}
+
+
