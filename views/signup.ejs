@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fit F.A.M. Sign Up</title>
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1.0"/>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel = "stylesheet" type = "text/css" href="../css/site-style.css">
+	<script
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="sign-up" class="container">
+	<header>
+		<h1>Sign Up</h1>
+		<p class="lead">Create a Fit F.A.M. account to start making your personalized workout schedule.</p>
+	</header>
+	<div id="formArea">
+		<form action="home.html">
+				<div class="form-group">
+					<label class="col-form-label" for="fullName">Full Name</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="fullName" id="fullName"  placeholder="Enter Name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-form-label" for="userName">Username</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="userName" id="userName"  placeholder="Enter Username">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-form-label"  for="emailAddress">Email address</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Enter email">
+					</div>
+				</div>
+				<div class="form-group">
+					<label  class="col-form-label" for="passwordFirst">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="passwordFirst" name="passwordFirst" placeholder="Password">
+					</div>
+				</div>
+				<div class="form-group">
+					<label  class=" col-form-label" for="passwordConfirm">Confirm Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password">
+					</div>
+				</div>
+				<fieldset class="form-group">
+					<legend>Personal Info</legend>
+					<div class="form-group">
+						<label  class="col-form-label" for="weight">Weight</label>
+						<div class="col-sm-10 row">
+							<input type="number" class="form-control col-sm-4" id="weight" name="weight" placeholder="150"><label class="col-sm-4 col-form-label" for="weight">lbs</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-form-label" for="feet">Height</label>
+						<div class="col-sm-10 row">
+							<input type="number" class="form-control col-sm-4" id="feet" name="feet" placeholder="5"><label class="col-sm-2 col-form-label" for="feet">'</label>
+							<input type="number" class="form-control col-sm-4" id="inches" name="inches" placeholder="10"><label class="col-sm-2 col-form-label" for="inches">"</label>
+						</div>
+					</div>
+				</fieldset>
+			<input type="submit" value="Sign Up" id="signUpBtn"class="btn btn-primary btn-block mx-auto">
+		</form>
+	</div>
+	</div>
+</body>
+</html>
