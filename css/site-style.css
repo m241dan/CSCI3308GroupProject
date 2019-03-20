@@ -9,11 +9,6 @@ html{
 }
 
 body{
-	/*background: linear-gradient(45deg, #0080ff, #45d9fd);*/
-	/*background: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);*/
-	/*background: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);*/
-	/*background: linear-gradient(60deg, #29323c 0%, #485563 100%);*/
-	/*background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);*/
 	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }
 
@@ -22,8 +17,6 @@ body{
 #wrapper{
 	height:90vh;
 	margin:5vh auto;
-	/*border-radius: 20px;
-	border:2px #fff solid;*/
 }
 
 #wrapper .row{
@@ -58,7 +51,7 @@ label{
 	margin:1rem auto;
 }
 
-button, input[type="submit"]{
+form button, form input[type="submit"]{
 	max-width: 175px;
 	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 	border-color:#fff !important;
@@ -97,4 +90,64 @@ fieldset .form-group{
 	margin-bottom: 30px;
 }
 
+/* Styles for Landing Page */
+nav h1{
+	margin:0;
+}
+
+.navbar-nav{
+	margin-right: 20px;
+}
+
+#navbarText{
+	justify-content: flex-end;
+}
+
+.container-fluid{
+	margin: 30px auto;
+}
+
+#schedule_container{
+	margin-top: 30px;
+	flex-wrap: nowrap;
+	overflow-x: scroll
+}
+
+/*To make the scrollbar always show for the calendar view*/
+#schedule_container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 10px;
+}
+
+#schedule_container::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(255,255,255,.5);
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,.3);
+}
+
+#schedule_container .col{
+	height: 60vh;
+	margin:auto 10px;
+	border-radius: 5px;
+	max-width: 300px;
+	min-width: 200px;
+}
+
+#schedule_container h3{
+	margin:10px 5px;
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+.workout button{
+	color: #fff;
+	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+	border-color:#fff !important;
+	margin-bottom: 1em;
+	padding:10px;
+}
+
+button:hover{
+	background: #fff;
+}
 
