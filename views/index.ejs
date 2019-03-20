@@ -1,11 +1,65 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<% include ../partials/header %>
+<% include ../partials/menu %>
+		<div class="container-fluid">
+			<!-- <h1><%= title %></h1> -->
+		    <!-- <p>Welcome to <%= title %></p> -->
+		    <div id="workout_container" class="row container-fluid">
+		    	<h2 class="col-8">Your Workout Schedule</h2>
+		    	<div class="workout col-4">
+		    		<button class="btn btn-block w-50 mx-auto">Add Workout</button>
+		    	</div>
+		    	<div id="schedule_container" class="w-100 row">
+		    		<div id="sun" class="col bg-dark">
+		    			<h3>Sunday</h3>
+		    		</div>
+		    		<div id="mon" class="col bg-dark">
+		    			<h3>Monday</h3>
+		    		</div>
+		    		<div id="tues" class="col bg-dark">
+		    			<h3>Tuesday</h3>
+		    		</div>
+		    		<div id="wed" class="col bg-dark">
+		    			<h3>Wednesday</h3>
+		    		</div>
+		    		<div id="thurs" class="col bg-dark">
+		    			<h3>Thursday</h3>
+		    		</div>
+		    		<div id="fri" class="col bg-dark">
+		    			<h3>Friday</h3>
+		    		</div>
+		    		<div id="sat" class="col bg-dark">
+		    			<h3>Saturday</h3>
+		    		</div>
+		    	</div>
+		    </div>
+		<div class="row justify-content-around">
+			<div class="col-md-5">
+				<h2>Personal Info</h2>
+				<div class="container">
+					<div class="row">
+						<p class="col-4">Name:</p>
+						<p id="info_name" class="col-8">Hello</p>
+					</div>
+					<div class="row">
+						<p class="col-4">Height:</p>
+						<p id="info_height" class="col-8">5'6"</p>
+					</div>
+					<div class="row">
+						<p class="col-4">Weight:</p>
+						<p id="info_weight" class="col-8">135bs</p>
+					</div>
+					<div class="row">
+						<p class="col-4">BMI:</p>
+						<p id="info_bmi" class="col-8">30</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<h2>Awards</h2>
+				<div id="award_prev">Awards will go here</div>
+			</div>
+		</div>
+		</div>
+		<!-- <script type="text/javascript" src=""></script> -->
   </body>
 </html>
