@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title><%= title %></title>
+	
+	<link rel='icon' href='../resources/img/favicon.ico' type='image/x-icon'/>
+  <!-- fontawesome for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap core CSS, JQuery, Popper.js-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link href="css/site-style.css" rel="stylesheet">
+  </head>
+  <body>
+  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="/index">
+		<!-- <img class="rounded-circle" src="" alt="" width="30" height="30"> -->
+		<h1>F.I.T.Fam</h1>
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav">
+		  <li class="nav-item">
+			<a class="nav-link" href="/home">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/team_stats">Summary</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="/player_info">Awards</a>
+		  </li>
+		  <li class="nav-item">
+		  	<a class="nav-link" href="/account"><!-- <i class="far fa-user fa-lg"></i> -->Profile</a>
+		  </li>
+		</ul>
+		<div class="form-inline my-2 my-lg-0">
+			<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+		</div>
+	  </div>
+	</nav>
+	<div class="container-fluid">
+			<!-- <h1><%= title %></h1> -->
+		    <!-- <p>Welcome to <%= title %></p> -->
+		    <div id="workout_container" class="row container-fluid">
+		    	<h2 class="col-8">Your Workout Schedule</h2>
+		    	<div class="workout col-4">
+		    		<button class="btn btn-block w-50 mx-auto">Add Workout</button>
+		    	</div>
+		    	<div id="schedule_container" class="w-100 row">
+		    		<div id="sun" class="col bg-dark">
+		    			<h3>Sunday</h3>
+		    		</div>
+		    		<div id="mon" class="col bg-dark">
+		    			<h3>Monday</h3>
+		    		</div>
+		    		<div id="tues" class="col bg-dark">
+		    			<h3>Tuesday</h3>
+		    		</div>
+		    		<div id="wed" class="col bg-dark">
+		    			<h3>Wednesday</h3>
+		    		</div>
+		    		<div id="thurs" class="col bg-dark">
+		    			<h3>Thursday</h3>
+		    		</div>
+		    		<div id="fri" class="col bg-dark">
+		    			<h3>Friday</h3>
+		    		</div>
+		    		<div id="sat" class="col bg-dark">
+		    			<h3>Saturday</h3>
+		    		</div>
+		    	</div>
+		    </div>
+		<div class="row justify-content-around">
+			<div class="col-md-5">
+				<h2>Personal Info</h2>
+				<div class="container">
+					<div class="row">
+						<p class="col-4">Name:</p>
+						<p id="info_name" class="col-8">Hello</p>
+					</div>
+					<div class="row">
+						<p class="col-4">Height:</p>
+						<p id="info_height" class="col-8">5'6"</p>
+					</div>
+					<div class="row">
+						<p class="col-4">Weight:</p>
+						<p id="info_weight" class="col-8">135bs</p>
+					</div>
+					<div class="row">
+						<p class="col-4">BMI:</p>
+						<p id="info_bmi" class="col-8">30</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<h2>Awards</h2>
+				<div id="award_prev">Awards will go here</div>
+			</div>
+		</div>
+		</div>
+		<!-- <script type="text/javascript" src=""></script> -->
+  </body>
+</html>
