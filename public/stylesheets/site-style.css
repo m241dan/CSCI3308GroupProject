@@ -1,0 +1,153 @@
+html{ 
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+	min-height: 100vh;
+}
+*, *:before, *:after{
+	box-sizing:inherit;
+}
+
+body{
+	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+
+/*Styles for Login Page*/
+
+#wrapper{
+	height:90vh;
+	margin:5vh auto;
+}
+
+#wrapper .row{
+	height: 100%;
+	align-items: center;
+}
+
+#formCol{
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#formArea{
+	border-radius: 10px;
+	height:75%;
+	width: 80%;
+	margin:auto;
+	border: double 5px transparent;
+	border-radius: 1em;
+	background-image: linear-gradient(#f8faff, #f8faff), radial-gradient(circle at top left, #0ba360,#3cba92);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+label{
+	font-size: 1.5em;
+}
+
+.form-group{
+	width:90%;
+	margin:1rem auto;
+}
+
+form button, form input[type="submit"]{
+	max-width: 175px;
+	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+	border-color:#fff !important;
+	margin-bottom: 1em;
+}
+
+a{
+	color: #0ba360;
+}
+
+.heading{
+	width:90%;
+	margin:auto;
+}
+
+#content h1{
+	line-height: 2rem;
+	font-size: 4em;
+}
+#content h1 small{
+	font-size: .3em;
+}
+
+/*Sign Up Page Styles*/
+
+header {
+	padding: 30px;
+	padding-bottom: 0px;
+}
+
+fieldset .form-group{
+	width: 100%;
+}
+
+#sign-up{
+	margin-bottom: 30px;
+}
+
+/* Styles for Landing Page */
+nav h1{
+	margin:0;
+}
+
+.navbar-nav{
+	margin-right: 20px;
+}
+
+#navbarText{
+	justify-content: flex-end;
+}
+
+.container-fluid{
+	margin: 30px auto;
+}
+
+#schedule_container{
+	margin-top: 30px;
+	flex-wrap: nowrap;
+	overflow-x: scroll
+}
+
+/*To make the scrollbar always show for the calendar view*/
+#schedule_container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 10px;
+}
+
+#schedule_container::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(255,255,255,.5);
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,.3);
+}
+
+#schedule_container .col{
+	height: 60vh;
+	margin:auto 10px;
+	border-radius: 5px;
+	max-width: 300px;
+	min-width: 200px;
+}
+
+#schedule_container h3{
+	margin:10px 5px;
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+.workout button{
+	color: #fff;
+	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+	border-color:#fff !important;
+	margin-bottom: 1em;
+	padding:10px;
+}
+
+button:hover{
+	background: #fff;
+}
+
