@@ -13,11 +13,11 @@
 			<th>Description</th>
 		</tr>
 		
-		<% if (achievement_data) { %>
-				<% var row = '';
+		<% if (achievement_data) {
+				var row = '';
 
 				achievement_data.forEach(function(item){
-					 row += '<tr>' + '<td>' + item.achievement_id + '</td> <td> ' + item.achivement_name + '</td> <td>' + item.points + '</td> <td>' + item.description + '</td></tr>';
+					 row += '<tr>' + '<td>' + item.achievement_id + '</td> <td> ' + item.achievement_name + '</td> <td>' + item.points + '</td> <td>' + item.description + '</td></tr>';
 						
 				 }); %>
 				 <%- row %> 

@@ -23,29 +23,13 @@ Test code direct input db
 
 /* GET dbTest page. */
 router.get('/', function(req, res, next) {
-    // res.write('This is /db_test');
-    // var inner_test = 'SELECT A.*' +
-				// 	 ' FROM Achievement A' +
-				// 	 ' INNER JOIN EnjoyerAchievement EA ON (EA.achievement_id = A.achievement_id)' +
-				// 	 ' INNER JOIN Enjoyer E ON (E.user_id = EA.user_id)' +
-				// 	 ' WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE user_name = \'IronMan61693\')' +
-				// 	 ';'
-
-	// db.task('get-everything', task => {
-	// 	return task.batch([
-	// 		task.any(inner_test)
-	// 	]);
-	// })
-
-
-	res.render('dbtest',{
-	  
-		my_title: "dbtest",
-		achivement_data: db.getAchievements()
+	db.getAchievements2( (err, results) => {
+		res.render('dbtest',{
+			my_title: "dbtest",
+			achievement_data: results.rows
+		});
 	})
 
-	
-  
 });
 
 module.exports = router;

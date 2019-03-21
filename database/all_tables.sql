@@ -2,12 +2,11 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)
--- Dumped by pg_dump version 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)
+-- Dumped from database version 9.5.14
+-- Dumped by pg_dump version 9.5.14
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -38,7 +37,6 @@ ALTER TABLE public.achievement OWNER TO postgres;
 --
 
 CREATE SEQUENCE public.achievement_achievement_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -75,7 +73,6 @@ ALTER TABLE public.enjoyer OWNER TO postgres;
 --
 
 CREATE SEQUENCE public.enjoyer_user_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -110,7 +107,6 @@ ALTER TABLE public.enjoyerachievement OWNER TO postgres;
 --
 
 CREATE SEQUENCE public.enjoyerachievement_achievement_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -132,7 +128,6 @@ ALTER SEQUENCE public.enjoyerachievement_achievement_id_seq OWNED BY public.enjo
 --
 
 CREATE SEQUENCE public.enjoyerachievement_user_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -170,7 +165,6 @@ ALTER TABLE public.exercise OWNER TO postgres;
 --
 
 CREATE SEQUENCE public.exercise_exercise_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -206,7 +200,6 @@ ALTER TABLE public.exerciseactual OWNER TO postgres;
 --
 
 CREATE SEQUENCE public.exerciseactual_exercise_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -228,7 +221,6 @@ ALTER SEQUENCE public.exerciseactual_exercise_id_seq OWNED BY public.exerciseact
 --
 
 CREATE SEQUENCE public.exerciseactual_user_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -250,7 +242,6 @@ ALTER SEQUENCE public.exerciseactual_user_id_seq OWNED BY public.exerciseactual.
 --
 
 CREATE SEQUENCE public.exerciseactual_workout_actual_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -286,7 +277,6 @@ ALTER TABLE public.exerciseintent OWNER TO postgres;
 --
 
 CREATE SEQUENCE public.exerciseintent_exercise_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -308,7 +298,6 @@ ALTER SEQUENCE public.exerciseintent_exercise_id_seq OWNED BY public.exerciseint
 --
 
 CREATE SEQUENCE public.exerciseintent_user_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -330,7 +319,6 @@ ALTER SEQUENCE public.exerciseintent_user_id_seq OWNED BY public.exerciseintent.
 --
 
 CREATE SEQUENCE public.exerciseintent_workout_intent_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -348,77 +336,77 @@ ALTER SEQUENCE public.exerciseintent_workout_intent_id_seq OWNED BY public.exerc
 
 
 --
--- Name: achievement achievement_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: achievement_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.achievement ALTER COLUMN achievement_id SET DEFAULT nextval('public.achievement_achievement_id_seq'::regclass);
 
 
 --
--- Name: enjoyer user_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: user_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyer ALTER COLUMN user_id SET DEFAULT nextval('public.enjoyer_user_id_seq'::regclass);
 
 
 --
--- Name: enjoyerachievement achievement_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: achievement_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyerachievement ALTER COLUMN achievement_id SET DEFAULT nextval('public.enjoyerachievement_achievement_id_seq'::regclass);
 
 
 --
--- Name: enjoyerachievement user_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: user_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyerachievement ALTER COLUMN user_id SET DEFAULT nextval('public.enjoyerachievement_user_id_seq'::regclass);
 
 
 --
--- Name: exercise exercise_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: exercise_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exercise ALTER COLUMN exercise_id SET DEFAULT nextval('public.exercise_exercise_id_seq'::regclass);
 
 
 --
--- Name: exerciseactual workout_actual_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: workout_actual_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseactual ALTER COLUMN workout_actual_id SET DEFAULT nextval('public.exerciseactual_workout_actual_id_seq'::regclass);
 
 
 --
--- Name: exerciseactual user_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: user_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseactual ALTER COLUMN user_id SET DEFAULT nextval('public.exerciseactual_user_id_seq'::regclass);
 
 
 --
--- Name: exerciseactual exercise_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: exercise_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseactual ALTER COLUMN exercise_id SET DEFAULT nextval('public.exerciseactual_exercise_id_seq'::regclass);
 
 
 --
--- Name: exerciseintent workout_intent_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: workout_intent_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseintent ALTER COLUMN workout_intent_id SET DEFAULT nextval('public.exerciseintent_workout_intent_id_seq'::regclass);
 
 
 --
--- Name: exerciseintent user_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: user_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseintent ALTER COLUMN user_id SET DEFAULT nextval('public.exerciseintent_user_id_seq'::regclass);
 
 
 --
--- Name: exerciseintent exercise_id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: exercise_id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseintent ALTER COLUMN exercise_id SET DEFAULT nextval('public.exerciseintent_exercise_id_seq'::regclass);
@@ -429,71 +417,6 @@ ALTER TABLE ONLY public.exerciseintent ALTER COLUMN exercise_id SET DEFAULT next
 --
 
 COPY public.achievement (achievement_id, achievement_name, points, description) FROM stdin;
-1	Awesome	200	You are particularly amazing!
-2	300	300	Lifted 300lbs
-3	db	100	Wrote a database
-\.
-
-
---
--- Data for Name: enjoyer; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.enjoyer (user_id, first_name, last_name, user_name, email) FROM stdin;
-1	Dominic	\N	IronMan61693	\N
-2	Amber	\N	IvoryDarling	\N
-\.
-
-
---
--- Data for Name: enjoyerachievement; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.enjoyerachievement (achievement_id, user_id, achieved_date) FROM stdin;
-3	1	2019-03-12
-1	2	2019-03-12
-2	1	2019-03-12
-\.
-
-
---
--- Data for Name: exercise; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.exercise (exercise_id, exercise_name, reps, sets, weight, distance) FROM stdin;
-1	squat	6	4	135	\N
-2	squat	2	2	225	\N
-3	squat	1	1	335	\N
-4	deadlift	4	1	450	\N
-5	deadlift	3	2	385	\N
-6	bench	10	1	800	\N
-7	bench	8	1	225	\N
-8	run	\N	\N	\N	5.19999981
-\.
-
-
---
--- Data for Name: exerciseactual; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.exerciseactual (workout_actual_id, user_id, workout_date, exercise_id) FROM stdin;
-1	1	2019-03-12	2
-2	1	2019-03-12	1
-3	1	2019-03-12	5
-4	1	2019-03-12	7
-\.
-
-
---
--- Data for Name: exerciseintent; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.exerciseintent (workout_intent_id, user_id, workout_date, exercise_id) FROM stdin;
-1	1	2019-03-12	8
-2	1	2019-03-12	3
-3	1	2019-03-12	2
-4	1	2019-03-12	4
-5	1	2019-03-12	6
 \.
 
 
@@ -501,14 +424,30 @@ COPY public.exerciseintent (workout_intent_id, user_id, workout_date, exercise_i
 -- Name: achievement_achievement_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.achievement_achievement_id_seq', 3, true);
+SELECT pg_catalog.setval('public.achievement_achievement_id_seq', 1, false);
+
+
+--
+-- Data for Name: enjoyer; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.enjoyer (user_id, first_name, last_name, user_name, email) FROM stdin;
+\.
 
 
 --
 -- Name: enjoyer_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.enjoyer_user_id_seq', 2, true);
+SELECT pg_catalog.setval('public.enjoyer_user_id_seq', 1, false);
+
+
+--
+-- Data for Name: enjoyerachievement; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.enjoyerachievement (achievement_id, user_id, achieved_date) FROM stdin;
+\.
 
 
 --
@@ -526,10 +465,26 @@ SELECT pg_catalog.setval('public.enjoyerachievement_user_id_seq', 1, false);
 
 
 --
+-- Data for Name: exercise; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.exercise (exercise_id, exercise_name, reps, sets, weight, distance) FROM stdin;
+\.
+
+
+--
 -- Name: exercise_exercise_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.exercise_exercise_id_seq', 8, true);
+SELECT pg_catalog.setval('public.exercise_exercise_id_seq', 1, false);
+
+
+--
+-- Data for Name: exerciseactual; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.exerciseactual (workout_actual_id, user_id, workout_date, exercise_id) FROM stdin;
+\.
 
 
 --
@@ -550,7 +505,15 @@ SELECT pg_catalog.setval('public.exerciseactual_user_id_seq', 1, false);
 -- Name: exerciseactual_workout_actual_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.exerciseactual_workout_actual_id_seq', 4, true);
+SELECT pg_catalog.setval('public.exerciseactual_workout_actual_id_seq', 1, false);
+
+
+--
+-- Data for Name: exerciseintent; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.exerciseintent (workout_intent_id, user_id, workout_date, exercise_id) FROM stdin;
+\.
 
 
 --
@@ -571,11 +534,11 @@ SELECT pg_catalog.setval('public.exerciseintent_user_id_seq', 1, false);
 -- Name: exerciseintent_workout_intent_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.exerciseintent_workout_intent_id_seq', 5, true);
+SELECT pg_catalog.setval('public.exerciseintent_workout_intent_id_seq', 1, false);
 
 
 --
--- Name: achievement achievement_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: achievement_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.achievement
@@ -583,7 +546,7 @@ ALTER TABLE ONLY public.achievement
 
 
 --
--- Name: enjoyer enjoyer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: enjoyer_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyer
@@ -591,7 +554,7 @@ ALTER TABLE ONLY public.enjoyer
 
 
 --
--- Name: enjoyerachievement enjoyerachievement_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: enjoyerachievement_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyerachievement
@@ -599,7 +562,7 @@ ALTER TABLE ONLY public.enjoyerachievement
 
 
 --
--- Name: exercise exercise_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exercise_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exercise
@@ -607,7 +570,7 @@ ALTER TABLE ONLY public.exercise
 
 
 --
--- Name: exerciseactual exerciseactual_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exerciseactual_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseactual
@@ -615,7 +578,7 @@ ALTER TABLE ONLY public.exerciseactual
 
 
 --
--- Name: exerciseintent exerciseintent_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exerciseintent_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseintent
@@ -623,7 +586,7 @@ ALTER TABLE ONLY public.exerciseintent
 
 
 --
--- Name: enjoyerachievement enjoyerachievement_achievement_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: enjoyerachievement_achievement_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyerachievement
@@ -631,7 +594,7 @@ ALTER TABLE ONLY public.enjoyerachievement
 
 
 --
--- Name: enjoyerachievement enjoyerachievement_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: enjoyerachievement_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.enjoyerachievement
@@ -639,7 +602,7 @@ ALTER TABLE ONLY public.enjoyerachievement
 
 
 --
--- Name: exerciseactual exerciseactual_exercise_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exerciseactual_exercise_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseactual
@@ -647,7 +610,7 @@ ALTER TABLE ONLY public.exerciseactual
 
 
 --
--- Name: exerciseactual exerciseactual_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exerciseactual_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseactual
@@ -655,7 +618,7 @@ ALTER TABLE ONLY public.exerciseactual
 
 
 --
--- Name: exerciseintent exerciseintent_exercise_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exerciseintent_exercise_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseintent
@@ -663,7 +626,7 @@ ALTER TABLE ONLY public.exerciseintent
 
 
 --
--- Name: exerciseintent exerciseintent_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: exerciseintent_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.exerciseintent
