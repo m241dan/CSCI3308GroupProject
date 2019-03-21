@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <table id="stats_table">
+		<tr>
+			<th>Achievement ID</th>
+			<th>Achievement Name</th>
+			<th>Points</th>
+			<th>Description</th>
+		</tr>
+		
+		<% if (achievement_data) { %>
+				<% var row = '';
+
+				achievement_data.forEach(function(item){
+					 row += '<tr>' + '<td>' + item.achievement_id + '</td> <td> ' + item.achivement_name + '</td> <td>' + item.points + '</td> <td>' + item.description + '</td></tr>';
+						
+				 }); %>
+				 <%- row %> 
+		<% } %>
+		
+
+	</table>
+
+  </body>
+</html>
