@@ -13,6 +13,7 @@ var addWorkoutRouter              = require('./routes/add_workout');
 var createWorkoutRouter           = require('./routes/create_workout');
 var loginRouter                   = require('./routes/login');
 var registrationRouter            = require('./routes/registration');
+var dbTestRouter				  = require('./routes/db_test');
 var app                           = express();
 
 // view engine setup
@@ -35,6 +36,7 @@ app.use('/add_workout', addWorkoutRouter);
 app.use('/create_workout', createWorkoutRouter);
 app.use('/login', loginRouter);
 app.use('/register', registrationRouter);
+app.use('/db_test', dbTestRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
