@@ -56,6 +56,11 @@ form button, form input[type="submit"]{
 	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 	border-color:#fff !important;
 	margin-bottom: 1em;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 17ac621... Ref #7: set up ejs files for login, sign up, and add workout pages to render in node using respective routers
 	color: #fff !important;
 	font-weight: bold;
 }
@@ -63,6 +68,10 @@ form button, form input[type="submit"]{
 	background: #fff;
 	color: #3cba92 !important;
 	border-color: #3cba92 !important;
+<<<<<<< HEAD
+=======
+>>>>>>> 6478a675fe6cc6ced8b95c83290d5ce5130c8c80
+>>>>>>> 17ac621... Ref #7: set up ejs files for login, sign up, and add workout pages to render in node using respective routers
 }
 
 a{
@@ -158,6 +167,11 @@ button:hover{
 	background: #fff;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 17ac621... Ref #7: set up ejs files for login, sign up, and add workout pages to render in node using respective routers
 /*Styles for Add Workout Page*/
 .row{
 	margin-right:0 !important;
@@ -186,3 +200,7 @@ legend{
 	color: #3cba92 !important;
 	border-color: #3cba92 !important;
 }
+<<<<<<< HEAD
+=======
+>>>>>>> 6478a675fe6cc6ced8b95c83290d5ce5130c8c80
+>>>>>>> 17ac621... Ref #7: set up ejs files for login, sign up, and add workout pages to render in node using respective routers
