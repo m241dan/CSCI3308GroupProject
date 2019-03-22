@@ -56,6 +56,16 @@ form button, form input[type="submit"]{
 	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 	border-color:#fff !important;
 	margin-bottom: 1em;
+<<<<<<< HEAD
+=======
+	color: #fff !important;
+	font-weight: bold;
+}
+#signUpBtn:hover{
+	background: #fff;
+	color: #3cba92 !important;
+	border-color: #3cba92 !important;
+>>>>>>> 6478a675fe6cc6ced8b95c83290d5ce5130c8c80
 }
 
 a{
@@ -151,3 +161,34 @@ button:hover{
 	background: #fff;
 }
 
+<<<<<<< HEAD
+=======
+/*Styles for Add Workout Page*/
+.row{
+	margin-right:0 !important;
+	margin-left: 0 !important;
+}
+
+.form-check{
+	margin:auto 20px;
+}
+.form-check label{
+	font-size: 1em;
+}
+
+#formArea h2{
+	text-align: center;
+	margin:20px auto;
+}
+
+legend{
+	font-size: 1.2em !important;
+	font-weight: bold;
+}
+
+#addWorkoutBtn:hover{
+	background: #fff;
+	color: #3cba92 !important;
+	border-color: #3cba92 !important;
+}
+>>>>>>> 6478a675fe6cc6ced8b95c83290d5ce5130c8c80

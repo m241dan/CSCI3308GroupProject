@@ -1,0 +1,154 @@
+<% include ../partials/header %>
+<% include ../partials/menu %>
+<div class="container-fluid">
+		<div id="formArea">
+			<h2>Add New Workout</h2>
+			<form action="home.html">
+				<fieldset class="form-group">
+				  <legend class="col-form-label">Workout Type</legend>
+				  <div class="col-sm-10 row form-inline">
+					<div class="form-check">
+					  <input class="form-check-input" onclick="" type="radio" name="workoutType" id="cardio" value="Cardio" required checked>
+					  <label class="form-check-label" for="cardio">
+						Cardio
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="" type="radio" name="workoutType" id="WeightTraining" value="Weight">
+					  <label class="form-check-label" for="WeightTraining">
+						Weight Training
+					  </label>
+					</div>
+					<div class="form-check">
+					  <input class="form-check-input" onclick="" type="radio" name="workoutType" id="flexibility" value="Flexibility" required>
+					  <label class="form-check-label" for="flexibility">
+						Flexibility Training
+					  </label>
+					</div>
+				  </div>
+				</fieldset>
+				<fieldset class="form-group" id="cardio_workout">
+					<legend class="col-form-label">Workout Information</legend>
+					<div class="row">
+						<label class="col-form-label col-sm-10 row">Exercise Type</label>
+						<div class="col-sm-10 row form-inline">
+							<div class="form-check">
+							  <input class="form-check-input" onclick="" type="radio" name="cardioType" id="run" value="Run">
+							  <label class="form-check-label" for="run">
+								Run
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" onclick="" type="radio" name="cardioType" id="bike" value="Bike">
+							  <label class="form-check-label" for="bike">
+								Bike
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" onclick="" type="radio" name="cardioType" id="swim" value="Swim">
+							  <label class="form-check-label" for="swim">
+								Swim
+							  </label>
+							</div>
+						</div>
+				  	</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="distance">Distance (mi)</label>
+						<div class="col-sm-10 row">
+						<input type="number" step=".1" class="form-control" name="distance" id="distance"  placeholder="4.5">
+						</div>
+				  	</div>
+				</div>
+				</fieldset>
+				<fieldset class="form-group" id="weight_workout">
+					<legend class="col-form-label">Workout Information</legend>
+					<div class="row col-sm-10">
+					<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="wExcerciseName">Exercise Name</label>
+						<div class="col-sm-10 row">
+							<input type="text" class="form-control" name="wExcerciseName" id="wExcerciseName"  placeholder="ex. Dumbell Press">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="weightAmt">Weight (lbs)</label>
+						<div class="col-sm-10 row">
+						<input type="number" class="form-control" name="weightAmt" id="weightAmt"  placeholder="15">
+						</div>
+				  	</div>
+				  	<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="weightSets">Sets</label>
+						<div class="col-sm-10 row">
+						<input type="number" class="form-control" name="weightSets" id="weightSets"  placeholder="5">
+						</div>
+				  	</div>
+				  	<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="weightReps">Reps</label>
+						<div class="col-sm-10 row">
+						<input type="number" class="form-control" name="weightReps" id="weightReps"  placeholder="10">
+						</div>
+				  	</div>
+				  </div>
+				</fieldset>
+				<fieldset class="form-group" id="flex_workout">
+					<legend class="col-form-label">Workout Information</legend>
+					<div class="row">
+						<label class="col-form-label col-sm-10 row">Exercise Type</label>
+						<div class="col-sm-10 row form-inline">
+							<div class="form-check">
+							  <input class="form-check-input" onclick="" type="radio" name="flexType" id="yoga" value="Yoga">
+							  <label class="form-check-label" for="yoga">
+								Yoga
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" onclick="" type="radio" name="flexType" id="stretching" value="Stretching">
+							  <label class="form-check-label" for="stretching">
+								Stretching
+							  </label>
+							</div>
+							<div class="form-check">
+							  <input class="form-check-input" onclick="" type="radio" name="flexType" id="pilates" value="Pilates">
+							  <label class="form-check-label" for="pilates">
+								Pilates
+							  </label>
+							</div>
+						</div>
+				  	</div>
+				<div class="row">
+					<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="duration">Duration (min)</label>
+						<div class="col-sm-10 row">
+						<input type="number" class="form-control" name="duration" id="duration"  placeholder="30">
+						</div>
+				  	</div>
+				</div>
+				</fieldset>
+				<fieldset class="form-group" id="workout_date">
+					<legend class="col-form-label">Date to Complete</legend>
+					<div class="row">
+					<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="date">Date</label>
+						<div class="col-sm-10 row">
+						<input type="date" class="form-control" name="date" id="date">
+						</div>
+				  	</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-10 row form-inline">
+						<div class="form-check">
+						  <input class="form-check-input" onclick="" type="checkbox" name="repeats" id="repeats" value="Yes">
+						  <label class="form-check-label" for="repeats">
+							Repeats Weekly
+						  </label>
+						</div>
+					</div>			
+				</div>
+				</fieldset>
+				<button type="submit" id="addWorkoutBtn" class="btn btn-block mx-auto">Add Workout</button>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/addWorkoutScripts.js"></script>
+  </body>
+</html>
