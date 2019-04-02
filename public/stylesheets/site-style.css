@@ -149,7 +149,7 @@ nav h1{
 	color: #fff;
 }
 
-.workout button{
+.workout a{
 	color: #fff;
 	background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 	border-color:#fff !important;
@@ -157,7 +157,7 @@ nav h1{
 	padding:10px;
 }
 
-button:hover{
+.workout a:hover, button:hover{
 	background: #fff;
 }
 
