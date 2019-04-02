@@ -47,7 +47,22 @@ function getAchievements2(callback)
 		callback(false, results);
 	});
 }
+function getuserinfo(id,callback)
+{
+pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(err,result){
 
+		if(err)
+		{
+			console.log(err);
+			
+		}
+		callback(err,result);
+
+	}
+	
+
+
+}
 module.exports = {
 	getAchievments,
 	getAchievements2
