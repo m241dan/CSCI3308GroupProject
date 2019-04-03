@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <table id="stats_table">
+		<tr>
+			<th>Exercise Name</th>
+			<th>Reps</th>
+			<th>Sets</th>
+			<th>Weight</th>
+			<th>Distance</th>
+			<th>Date</th>
+		</tr>
+		
+		<% if (data) {
+				var row = '';
+
+				data.forEach(function(item){
+					 row += '<tr>' + '<td>' + item.exercise_name + '</td> <td>' + item.reps + '</td> <td>' + item.sets + '</td> <td>' + item.weight + '</td> <td>' + item.distance + '</td> <td>' + item.workout_date + '</td></tr>';
+						
+				 }); %>
+				 <%- row %> 
+		<% } %>
+		
+
+	</table>
+
+  </body>
+</html>

@@ -1,0 +1,8 @@
+
+
+02Apr
+We want Sunday to Saturday, pass in a date from JS and find that weeks worth of information. 
+
+By Thursday have a database Query that presents a weeks worth of information regardless of the day passed in. Hopefully have it in the handle to allow its use in the front end as well. Done
+
+By next Tuesday have in db handle a way to push workouts into the db that matches the form.

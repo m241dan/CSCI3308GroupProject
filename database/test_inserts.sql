@@ -82,6 +82,30 @@ VALUES
  '2019-03-12')
 ;
 
+INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date)
+VALUES
+((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = 'squat' AND weight = 335 ),
+ '2019-03-10'),
+((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = 'deadlift' AND (weight = 450)),
+ '2019-03-10')	
+;
+
+INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date)
+VALUES
+((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND weight > 335 ),
+ '2019-03-11')	
+;
+
+INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date)
+VALUES
+((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND weight > 335 ),
+ '2019-03-09')	
+;
+
 INSERT INTO ExerciseActual(user_id, exercise_id, workout_date)
 VALUES
 ((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
@@ -121,4 +145,26 @@ INNER JOIN ExerciseActual WA ON (WA.exercise_id = W.exercise_id)
 INNER JOIN Enjoyer E ON (E.user_id = WA.user_id)
 WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693')
 AND WA.workout_date = '2019-03-12'
+;
+
+/* Select exercise intent by date, gives back date, include date and over range */
+SELECT W.exercise_name, W.reps, W.sets,W.weight, W.distance, to_char(EI.workout_date, 'DD-MM-YYYY') AS workout_date
+FROM Exercise W
+INNER JOIN ExerciseIntent EI ON (EI.exercise_id = W.exercise_id)
+INNER JOIN Enjoyer E ON (E.user_id = EI.user_id)
+WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693')
+AND (EI.workout_date >= date_trunc('week', date '2019-03-12') - INTERVAL '1days'
+     AND EI.workout_date < date_trunc('week', date '2019-03-12') + INTERVAL '6days')
+ORDER BY EI.workout_date
+;
+
+/* Select exercise intent by date, gives back day of the week, include date and over range */
+SELECT W.exercise_name, W.reps, W.sets,W.weight, W.distance, to_char(EI.workout_date, 'DAY') AS workout_date
+FROM Exercise W
+INNER JOIN ExerciseIntent EI ON (EI.exercise_id = W.exercise_id)
+INNER JOIN Enjoyer E ON (E.user_id = EI.user_id)
+WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693')
+AND (EI.workout_date >= date_trunc('week', date '2019-03-12') - INTERVAL '1days'
+     AND EI.workout_date < date_trunc('week', date '2019-03-12') + INTERVAL '6days')
+ORDER BY EI.workout_date
 ;

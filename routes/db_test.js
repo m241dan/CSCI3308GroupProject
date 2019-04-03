@@ -23,7 +23,7 @@ Test code direct input db
 
 /* GET dbTest page. */
 router.get('/', function(req, res, next) {
-	db.getAchievements2( (err, results) => {
+	db.getAchievements('IronMan61693' , (err, results) => {
 		res.render('dbtest',{
 			my_title: "dbtest",
 			achievement_data: results.rows
@@ -33,7 +33,3 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
-
-
-  
-
