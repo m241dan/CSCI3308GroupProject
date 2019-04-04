@@ -63,6 +63,24 @@ pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], funct
 
 
 }
+function insertuser(user_id, first_name, last_name, user_name, email){
+
+var insert_statement="INSERT INTO enjoyer(user_id, first_name, last_name, user_name, email) VALUES('" + user_id + "','" +
+    first_name + "','" + last_name + "','" + user_name +"','" + email + "');";
+
+pool.query(insert_statement, (err,results)=>{
+		if(err)
+		{
+			console.log(err);
+			callback(true);
+			return;
+		}
+		callback(false,results);
+})
+
+};
+
+
 
 module.exports = {
 	getAchievments,
