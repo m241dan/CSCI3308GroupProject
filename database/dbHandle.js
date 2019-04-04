@@ -49,7 +49,7 @@ function getAchievements2(callback)
 }
 function getuserinfo(id,callback)
 {
-pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(err,result){
+pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(err,result)=>{
 
 		if(err)
 		{
@@ -63,6 +63,7 @@ pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], funct
 
 
 }
+
 module.exports = {
 	getAchievments,
 	getAchievements2
