@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 router.post('/', async (req, res) => {
     console.log( "pwd: " + req.body.passwordFirst );
     var pwd = await bcrypt.hash(req.body.passwordFirst, 5);
-    db.insertUser(req.body.fullName, "", req.body.userName, req.body.emailAddress, pwd);
+    db.insertUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.emailAddress, pwd);
     res.redirect('/');
 });
 
