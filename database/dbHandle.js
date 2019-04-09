@@ -1,13 +1,11 @@
-
-const Pool = require('pg').Pool;
+const { Pool, Client } = require('pg');
 const pool = new Pool({
+	user: 'postgres',
 	host: 'localhost',
 	port: 5432,
 	database: 'project_db',
-	user: 'postgres',
 	password: 'pwd'
 });
-
 
 function getAchievements(id, callback)
 {
@@ -29,8 +27,6 @@ function getAchievements(id, callback)
 		callback(false, results);
 	});
 }
-
-
 
 function getWorkoutIntentByDate(id, date, callback){
 	const user_id = id;
@@ -59,7 +55,7 @@ function getWorkoutIntentByDate(id, date, callback){
 
 function getUserInfo(id,callback)
 {
-	pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(err,result){
+	pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=$1', [id], function(err,result){
 
         if(err)
         {
@@ -69,19 +65,25 @@ function getUserInfo(id,callback)
 	})
 }
 
-function insertUser(user_id, first_name, last_name, user_name, email){
+function getUserByEmail(email,callback)
+{
+	pool.query('SELECT * from enjoyer where email=$1', [email], (err, result) => {
+		if( err )
+		{
+			console.log(err)
+		}
+		callback(err,result);
+	})
+}
 
-	var insert_statement="INSERT INTO enjoyer(user_id, first_name, last_name, user_name, email) VALUES('" + user_id + "','" +
-		first_name + "','" + last_name + "','" + user_name +"','" + email + "');";
+function insertUser(first_name, last_name, user_name, email, password){
 
-	pool.query(insert_statement, (err,results)=>{
+	pool.query('INSERT INTO enjoyer (first_name, last_name, user_name, email, password) VALUES ( $1, $2, $3, $4, $5 );',
+		[first_name, last_name, user_name, email, password], (err,results)=>{
 		if(err)
 		{
 			console.log(err);
-			callback(true);
-			return;
 		}
-		callback(false,results);
 	})
 
 }

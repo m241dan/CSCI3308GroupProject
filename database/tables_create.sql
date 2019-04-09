@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS Enjoyer (
 	first_name VARCHAR(128),
 	last_name VARCHAR(128),
 	user_name VARCHAR(128) NOT NULL,
-	email VARCHAR(128)
+	email VARCHAR(128),
+	password CHAR(60)
 );
 
 CREATE TABLE IF NOT EXISTS Achievement (
