@@ -88,9 +88,54 @@ function insertUser(first_name, last_name, user_name, email, password){
 
 }
 
+function insertIntentWorkout(email, exer_name, dist, rep, set, wght, dur, date){
+	// exercise_name, reps, sets, weight, distance, duration, workout_date
+	query_exercise_id = 'WITH s AS (SELECT exercise_id FROM Exercise WHERE exercise_name = $1 AND reps = $2 AND sets = $3 AND weight = $4 AND distance = $5 AND duration = $6),' +
+		   				' i AS (INSERT INTO Exercise(exercise_name, reps, sets, weight, distance, duration) SELECT $1, $2, $3, $4, $5, $6' +
+		      			' WHERE NOT EXISTS (SELECT exercise_id FROM Exercise WHERE exercise_name = $1 AND reps = $2 AND sets = $3 AND weight = $4 AND distance = $5 AND duration = $6)' +
+		    			'  RETURNING exercise_id )' +
+		    			' SELECT exercise_id FROM i UNION ALL SELECT exercise_id FROM s;'
+		    	
+
+	query_insert =  'WITH s AS (SELECT workout_intent_id FROM ExerciseIntent WHERE user_id = (SELECT user_id FROM Enjoyer' +
+					' WHERE email = $2) AND exercise_id = $1 AND workout_date = $3), '+
+					' i AS (INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date) SELECT' + 
+ 					' (SELECT user_id FROM Enjoyer WHERE email = $2),' +
+					' $1, $3 ' +
+					' WHERE NOT EXISTS (SELECT workout_intent_id FROM ExerciseIntent WHERE user_id = (SELECT user_id FROM Enjoyer' +
+					' WHERE email = $2) AND exercise_id = $1 AND workout_date = $3)' +
+					' RETURNING workout_intent_id)' +
+					' SELECT workout_intent_id FROM i UNION ALL SELECT workout_intent_id FROM s' +
+					';'
+
+	pass_me_one = [exer_name, rep, set, wght, dist, dur]
+	// , dist, rep, set, wght, dur
+
+	pool.query (query_exercise_id, pass_me_one, (err,ex_id)=>{
+		console.log(ex_id)
+		console.log(ex_id.rows[0].exercise_id)
+		pass_me_two = [ex_id.rows[0].exercise_id, email, date]
+		// console.log('email in dbhandle');
+		// console.log(email)
+		pool.query(query_insert, pass_me_two, (err,results)=>{
+			// console.log(results)
+			if(err)
+			{
+				console.log(err)
+			}
+		})
+	})
+	
+
+}
+
+
+
+
 module.exports = {
 	getAchievements,
 	getWorkoutIntentByDate,
 	insertUser,
-	getUserInfo
+	getUserInfo,
+	insertIntentWorkout
 };

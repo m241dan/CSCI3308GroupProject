@@ -27,8 +27,8 @@ VALUES
 ('squat', 1, 335, 1),
 ('deadlift', 4, 450, 1),
 ('deadlift', 3, 385, 2),
-('bench', 10, 800, 1),
-('bench', 8, 225, 1)
+(''bench'', 10, 800, 1),
+(''bench'', 8, 225, 1)
 ;
 
 INSERT INTO Exercise(exercise_name, distance)
@@ -78,7 +78,7 @@ VALUES
  (SELECT exercise_id FROM Exercise WHERE exercise_name = 'deadlift' AND (weight = 450)),
  '2019-03-12')	,
 ((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
- (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND (weight > 300)),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = ''bench'' AND (weight > 300)),
  '2019-03-12')
 ;
 
@@ -95,14 +95,14 @@ VALUES
 INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date)
 VALUES
 ((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
- (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND weight > 335 ),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = ''bench'' AND weight > 335 ),
  '2019-03-11')	
 ;
 
 INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date)
 VALUES
 ((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
- (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND weight > 335 ),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = ''bench'' AND weight > 335 ),
  '2019-03-09')	
 ;
 
@@ -118,7 +118,7 @@ VALUES
  (SELECT exercise_id FROM Exercise WHERE exercise_name = 'deadlift' AND (weight = 385)),
  '2019-03-12')	,
 ((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
- (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND (weight < 300)),
+ (SELECT exercise_id FROM Exercise WHERE exercise_name = ''bench'' AND (weight < 300)),
  '2019-03-12')
 ;
 /* Print all of IronMan61693 achievements */
@@ -168,3 +168,26 @@ AND (EI.workout_date >= date_trunc('week', date '2019-03-12') - INTERVAL '1days'
      AND EI.workout_date < date_trunc('week', date '2019-03-12') + INTERVAL '6days')
 ORDER BY EI.workout_date
 ;
+
+/* Insert into intent table creating exercise if needed test vals*/
+INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date) VALUES(
+  (SELECT user_id FROM Enjoyer WHERE email = 'dominic.pontious@gmail.com'),
+  (  WITH s AS (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND reps = 3 AND sets = 2 AND weight = 245 AND distance = 0 AND duration = 0),
+   	 i AS (INSERT INTO Exercise(exercise_name, reps, sets, weight, distance, duration) SELECT 'bench', 3, 2, 245, 0, 0
+      WHERE NOT EXISTS (SELECT exercise_id FROM Exercise WHERE exercise_name = 'bench' AND reps = 3 AND sets = 2 AND weight = 245 AND distance = 0 AND duration = 0)
+      RETURNING exercise_id )
+     SELECT exercise_id FROM i UNION ALL SELECT exercise_id FROM s
+  ),
+  '2019-04-10'
+);
+
+WITH s AS (SELECT workout_intent_id FROM ExerciseIntent WHERE user_id = (SELECT user_id FROM Enjoyer WHERE email = 'dominic.pontious@gmail.com') AND exercise_id = 1 AND workout_date = '2019-04-10'),
+i AS (INSERT INTO ExerciseIntent(user_id, exercise_id, workout_date) SELECT 
+  (SELECT user_id  FROM Enjoyer WHERE email = 'dominic.pontious@gmail.com'),
+  1,
+  '2019-04-10' 
+WHERE NOT EXISTS (SELECT workout_intent_id FROM ExerciseIntent WHERE user_id = (SELECT user_id FROM Enjoyer WHERE email = 'dominic.pontious@gmail.com') AND exercise_id = 1 AND workout_date = '2019-04-10')
+	RETURNING workout_intent_id)
+SELECT workout_intent_id FROM i UNION ALL SELECT workout_intent_id FROM s
+;
+

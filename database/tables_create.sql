@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS Exercise (
 	reps SMALLINT,
 	sets SMALLINT, 
 	weight SMALLINT,
-	distance REAL
+	distance REAL,
+	duration SMALLINT
 );
 
 CREATE TABLE IF NOT EXISTS ExerciseIntent (
