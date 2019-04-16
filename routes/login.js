@@ -48,6 +48,7 @@ passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, usernam
                                     }]);
                                 } else {
                                     console.log("Incorrect login details");
+                                    req.flash('failure', 'Bad username or password!');
                                     return done(null, false);
                                 }
                             });
@@ -79,7 +80,8 @@ router.get('/', function(req, res, next) {
     }
     else {
         res.render('login', {
-            title: "F.I.T. Fam - Login"
+            title: "F.I.T. Fam - Login",
+            messages: {success: req.flash('success'), failure: req.flash('failure')}
         });
     }
 });

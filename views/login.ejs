@@ -1,5 +1,15 @@
 
 <% include ../partials/header %>
+	<% if (messages) { %>
+		<% if (messages.success != '') {%>
+			<div class="font-weight-bold text-center alert alert-success alert-dismissible" role="alert">
+				<%= messages.success %>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+		<% } %>
+	<% } %>
 	<div id="wrapper" class="container">
 		<div class="row p-2">
 		<div id="content" class="col">
@@ -20,6 +30,13 @@
 			    <label for="userPassword">Password</label>
 			    <input type="password" class="form-control" id="userPassword" name="password" placeholder="Enter password">
 			  </div>
+				<% if (messages) { %>
+					<%if (messages.failure != '') {%>
+						<div class="alert alert-danger" role="alert">
+							<%= messages.failure %>
+						</div>
+					<% } %>
+				<% } %>
 			  <button id="logInBtn" type="submit" class="btn btn-primary btn-block mx-auto">Log In</button>
 			</form>
 			<p class="text-center">or <a href="/register">create an account</a></p>
