@@ -48,10 +48,10 @@ VALUES
 
 INSERT INTO EnjoyerAchievement(user_id, achievement_id, achieved_date)
 VALUES 
-((SELECT user_id FROM Enjoyer WHERE user_name = 'IvoryDarling'),
+((SELECT user_id FROM Enjoyer WHERE user_name = 'dopo2697'),
  (SELECT achievement_id FROM Achievement WHERE achievement_name = 'Awesome'),
  '2019-03-12'),
-((SELECT user_id FROM Enjoyer WHERE user_name = 'IronMan61693'),
+((SELECT user_id FROM Enjoyer WHERE user_name = 'dopo2697'),
  (SELECT achievement_id FROM Achievement WHERE achievement_name = '300'),
  '2019-03-12')
 ;

@@ -4,31 +4,192 @@
 			<!-- <h1><% title %></h1> -->
 		    <!-- <p>Welcome to <%= title %></p> -->
 		    <div id="workout_container" class="row container-fluid">
-		    	<h2 class="col-8">Your Workout Schedule</h2>
+		    	<h2 class="col-8"><%= first_name %>'s Workout Schedule</h2>
 		    	<div class="workout col-4">
 		    		<a class="btn btn-block w-50 mx-auto" href="/add_workout">Add Workout</a>
 		    	</div>
 		    	<div id="schedule_container" class="w-100 row">
 		    		<div id="sun" class="col bg-dark">
 		    			<h3>Sunday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Sunday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else{
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    		<div id="mon" class="col bg-dark">
 		    			<h3>Monday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Monday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else{
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    		<div id="tues" class="col bg-dark">
 		    			<h3>Tuesday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Tuesday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else{
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    		<div id="wed" class="col bg-dark">
 		    			<h3>Wednesday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Wednesday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else{
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    		<div id="thurs" class="col bg-dark">
 		    			<h3>Thursday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Thursday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else if (item.duration != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    		<div id="fri" class="col bg-dark">
 		    			<h3>Friday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Friday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else{
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    		<div id="sat" class="col bg-dark">
 		    			<h3>Saturday</h3>
+		    			<% if (workout_data) {
+								var row = '';
+
+								workout_data.forEach(function(item){
+									if (item.workout_date.trim() == 'Saturday'){
+									  row += '<div class="container">'
+									  if(item.reps != 0){
+									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									  }
+									  else if (item.distance != 0){
+									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									  }
+									  else{
+									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  }
+									  row += '</div>';
+									}
+
+										
+								}); %>
+								 <%- row %> 
+									
+						<% } %>
 		    		</div>
 		    	</div>
 		    </div>
@@ -60,6 +221,7 @@
 			</div>
 		</div>
 		</div>
+		
 		<!-- <script type="text/javascript" src=""></script> -->
   </body>
 </html>

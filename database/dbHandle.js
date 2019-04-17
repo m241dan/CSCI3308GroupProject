@@ -33,11 +33,11 @@ function getWorkoutIntentByDate(id, date, callback){
 	const workout_date = date;
 	const pass_me = [user_id, workout_date];
 
-	var query_string =  "SELECT W.exercise_name, W.reps, W.sets,W.weight, W.distance, to_char(EI.workout_date, 'Day') AS workout_date" +
+	var query_string =  "SELECT W.exercise_name, W.reps, W.sets,W.weight, W.distance, W.duration, to_char(EI.workout_date, 'Day') AS workout_date" +
 						" FROM Exercise W" +
 						" INNER JOIN ExerciseIntent EI ON (EI.exercise_id = W.exercise_id)" +
 						" INNER JOIN Enjoyer E ON (E.user_id = EI.user_id)" +
-						" WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE user_name = $1)" +
+						" WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE email = $1)" +
 						" AND (EI.workout_date >= date_trunc('week', $2::timestamp + INTERVAL '1days')- INTERVAL '1days'" +
 						"      AND EI.workout_date < date_trunc('week', $2::timestamp + INTERVAL '1days') + INTERVAL '6days')" +
 						" ORDER BY EI.workout_date" +
