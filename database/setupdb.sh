@@ -4,9 +4,9 @@
 # I have attempted many ways to get this to not prompt for a password and have not gotten it to work.
 DBNAME="project_db"
 DBADMIN="postgres"
-DBPASS="pwd"
+DBPASS="myost"
 
-PGPASSINFO="localhost:*:project_db:postgres:pwd"
+PGPASSINFO="localhost:*:project_db:postgres:myost"
 if [ ! -f .pgpass ]; then
 	touch .pgpass
 	chmod 0600 .pgpass

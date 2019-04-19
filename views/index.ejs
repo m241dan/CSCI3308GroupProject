@@ -16,17 +16,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Sunday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
 									  else{
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -42,17 +43,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Monday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
 									  else{
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -68,17 +70,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Tuesday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
 									  else{
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -94,17 +97,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Wednesday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
 									  else{
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -120,17 +124,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Thursday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
-									  else if (item.duration != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									  else{
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -146,17 +151,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Friday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
 									  else{
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -172,17 +178,18 @@
 
 								workout_data.forEach(function(item){
 									if (item.workout_date.trim() == 'Saturday'){
-									  row += '<div class="container">'
+									  row += '<div class="card">';
+									  row += '<div class="card-body">';
 									  if(item.reps != 0){
-									    row += '<p>' + item.exercise_name + ' reps:' + item.reps + ' sets:' + item.sets + ' weight:' + item.weight + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">reps: ' + item.reps + '<br>sets: ' + item.sets + '<br>weight: ' + item.weight + ' lbs</p>';
 									  }
 									  else if (item.distance != 0){
-									    row += '<p>' + item.exercise_name + ' distance:' + item.distance + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">distance: ' + item.distance + ' mi</p>';
 									  }
 									  else{
-									    row += '<p>' + item.exercise_name + ' distance:' + item.duration + ' </p>';
+									    row += '<h5 class="card-title">' + item.exercise_name + '</h5><p class="card-text">duration: ' + item.duration + ' mins</p>';
 									  }
-									  row += '</div>';
+									  row += '</div></div>';
 									}
 
 										
@@ -193,33 +200,6 @@
 		    		</div>
 		    	</div>
 		    </div>
-		<div class="row justify-content-around">
-			<div class="col-md-5">
-				<h2>Personal Info</h2>
-				<div class="container">
-					<div class="row">
-						<p class="col-4">Name:</p>
-						<p id="info_name" class="col-8">Hello</p>
-					</div>
-					<div class="row">
-						<p class="col-4">Height:</p>
-						<p id="info_height" class="col-8">5'6"</p>
-					</div>
-					<div class="row">
-						<p class="col-4">Weight:</p>
-						<p id="info_weight" class="col-8">135bs</p>
-					</div>
-					<div class="row">
-						<p class="col-4">BMI:</p>
-						<p id="info_bmi" class="col-8">30</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-5">
-				<h2>Awards</h2>
-				<div id="award_prev">Awards will go here</div>
-			</div>
-		</div>
 		</div>
 		
 		<!-- <script type="text/javascript" src=""></script> -->

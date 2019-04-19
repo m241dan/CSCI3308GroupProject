@@ -176,6 +176,24 @@ nav h1{
 	margin:20px auto;
 }
 
+#schedule_container .card{
+	margin-bottom:.5rem;
+}
+
+#schedule_container .card-body{
+	padding: .5rem;
+}
+
+#schedule_container .card-title{
+	margin-bottom: .25rem;
+	font-weight: 600;
+}
+
+#schedule_container .card-text{
+	padding-left:.5rem;
+	font-size:1em;
+}
+
 legend{
 	font-size: 1.2em !important;
 	font-weight: bold;
