@@ -38,9 +38,9 @@ function getAchievements2(callback)
 		' WHERE E.user_id = (SELECT user_id FROM Enjoyer WHERE user_name = $1)' +
 		';' ;
 
-	pool.query(query_string, [id], (err, results) => {
-		if (err) {
-			console.log(err);
+	pool.query(query_string, [id], (error, results) => {
+		if (error) {
+			//console.log(err);
 			callback(true);
 			return;
 		}
@@ -49,14 +49,14 @@ function getAchievements2(callback)
 }
 function getuserinfo(id,callback)
 {
-pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(err,result)=>{
+pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(error,result)=>{
 
-		if(err)
+		if(error)
 		{
-			console.log(err);
-			
+			//console.log(err);
+			throw error
 		}
-		callback(err,result);
+		callback(error,result);
 
 	}
 	
@@ -69,9 +69,9 @@ var insert_statement="INSERT INTO enjoyer(user_id, first_name, last_name, user_n
     first_name + "','" + last_name + "','" + user_name +"','" + email + "');";
 
 pool.query(insert_statement, (err,results)=>{
-		if(err)
+		if(error)
 		{
-			console.log(err);
+			//console.log(error);
 			callback(true);
 			return;
 		}
