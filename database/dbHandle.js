@@ -47,7 +47,22 @@ function getAchievements2(callback)
 		callback(false, results);
 	});
 }
+function getuserinfo(id,callback)
+{
+pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], function(err,result)=>{
 
+		if(err)
+		{
+			console.log(err);
+			
+		}
+		callback(err,result);
+
+	}
+	
+
+
+}
 function insertuser(user_id, first_name, last_name, user_name, email){
 
 var insert_statement="INSERT INTO enjoyer(user_id, first_name, last_name, user_name, email) VALUES('" + user_id + "','" +
