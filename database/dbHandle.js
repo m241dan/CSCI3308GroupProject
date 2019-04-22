@@ -58,7 +58,7 @@ pool.query('SELECT name,height,weight FROM enjoyer WHERE userid=id', [id], funct
 		}
 		callback(error,result);
 
-	}
+	};
 	
 
 
