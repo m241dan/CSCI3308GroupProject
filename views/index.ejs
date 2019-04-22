@@ -10,16 +10,16 @@
 		    		<a class="btn btn-block w-50 mx-auto" href="/add_workout">Add Workout</a>
 		    	</div>
 		    	</br>
-		    	<h3 class="col-6">  Week of <%= current_date %> </h3>
-		    	<form class = "col-6" action="/" method="post">
+		    	<h3 class="row col-10">  Week of <%= current_date %> </h3>
+		    	<form class = "row col-12" action="/" method="post">
 	    			
-		    		<div class="form-group">
-						<label class="col-form-label col-sm-10 row" for="date">Pick week</label>
-						<div class="col-sm-10 row">
+		    		<div class="form-group row col-sm-6">
+						<label class="col-form-label col-sm-4" for="date">Pick week</label>
+						<div class="col-sm-8">
 						<input type="date" class="form-control" name="date" id="date">
 						</div>
 				  	</div>
-				  	<button type="submit" class="btn btn-block mx-auto" href="/">Change week</button>
+				  	<button id="weekBtn" type="submit" class="col-sm-2 btn" href="/">Change week</button>
 		    	</form>
 		    	<div id="schedule_container" class="w-100 row">
 		    		<div id="sun" class="col bg-dark">

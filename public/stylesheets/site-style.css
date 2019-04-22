@@ -199,8 +199,12 @@ legend{
 	font-weight: bold;
 }
 
-#addWorkoutBtn:hover{
+#addWorkoutBtn:hover, #weekBtn:hover{
 	background: #fff;
 	color: #3cba92 !important;
 	border-color: #3cba92 !important;
+}
+
+#weekBtn{
+	margin:1rem;
 }
