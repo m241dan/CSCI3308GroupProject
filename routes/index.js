@@ -30,16 +30,16 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res){
     // console.log('email check!');
     // console.log(req.user['NULL'].email);
-    console.log('CHECK')
-    console.log(req.body);
-    console.log(req.body.date);
+    // console.log('CHECK')
+    // console.log(req.body);
+    // console.log(req.body.date);
     var new_date = req.body.date.replace(/-/g,",")
-    console.log(new_date)
+    // console.log(new_date)
 
     if (req.body.date != ''){
-        console.log(req.body.date);
+        // console.log(req.body.date);
         cur_date = new Date(new_date) 
-        console.log(cur_date) 
+        // console.log(cur_date) 
     }
     
 

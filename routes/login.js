@@ -15,8 +15,8 @@ const pool = new Pool({
 
 passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, username, password, done) => {
     loginAttempt();
-    console.log( "email:" + username );
-    console.log( "password: " + password );
+    // console.log( "email:" + username );
+    // console.log( "password: " + password );
 
     async function loginAttempt() {
         console.log( "attempting to connect" );
@@ -26,7 +26,7 @@ passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, usernam
             var currentAccountData = await JSON.stringify(
                 client.query('SELECT user_id, first_name, last_name, user_name, email, password from enjoyer where email = $1',
                     [username], function (err, result) {
-                    console.log( "getting here...");
+                    // console.log( "getting here...");
                         if (err) {
                             return done(err);
                         }
@@ -36,7 +36,7 @@ passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, usernam
                         }
                         else
                         {
-                            console.log( "Hash: " + bcrypt.hash(req.body.password, 5 ) );
+                            // console.log( "Hash: " + bcrypt.hash(req.body.password, 5 ) );
                             bcrypt.compare(password, result.rows[0].password, (err, check) => {
                                 if (err) {
                                     console.log('Error occured while checking password')
@@ -66,11 +66,11 @@ passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, usernam
 // });
 
 passport.serializeUser(function(user, done) {
-    console.log('serialize');
+    // console.log('serialize');
     done(null, user);
 });
 passport.deserializeUser(function(user, done) {
-    console.log('deserialize');
+    // console.log('deserialize');
     done(null, user);
 });
 
