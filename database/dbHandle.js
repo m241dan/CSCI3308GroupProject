@@ -1,11 +1,27 @@
-const { Pool, Client } = require('pg');
-const pool = new Pool({
+const local_config = {
 	user: 'postgres',
 	host: 'localhost',
 	port: 5432,
 	database: 'project_db',
 	password: 'pwd'
-});
+};
+const heroku_db_config = process.env.DATABASE_URL;
+console.log(process.env.DATABASE_URL)
+var config = local_config;
+
+const { Pool, Client } = require('pg');
+if(typeof(heroku_db_config) != 'undefined'){
+	console.log('heroku')
+	config = heroku_db_config;
+
+}
+else{
+	// console.log('else')
+	
+}
+// console.log(config)
+const pool = new Pool(config)
+
 
 function getAchievements(id, callback)
 {

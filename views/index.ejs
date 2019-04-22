@@ -5,9 +5,22 @@
 		    <!-- <p>Welcome to <%= title %></p> -->
 		    <div id="workout_container" class="row container-fluid">
 		    	<h2 class="col-8"><%= first_name %>'s Workout Schedule</h2>
+		    	
 		    	<div class="workout col-4">
 		    		<a class="btn btn-block w-50 mx-auto" href="/add_workout">Add Workout</a>
 		    	</div>
+		    	</br>
+		    	<h3 class="col-6">  Week of <%= current_date %> </h3>
+		    	<form class = "col-6" action="/" method="post">
+	    			
+		    		<div class="form-group">
+						<label class="col-form-label col-sm-10 row" for="date">Pick week</label>
+						<div class="col-sm-10 row">
+						<input type="date" class="form-control" name="date" id="date">
+						</div>
+				  	</div>
+				  	<button type="submit" class="btn btn-block mx-auto" href="/">Change week</button>
+		    	</form>
 		    	<div id="schedule_container" class="w-100 row">
 		    		<div id="sun" class="col bg-dark">
 		    			<h3>Sunday</h3>
