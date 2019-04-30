@@ -15,18 +15,14 @@ const pool = new Pool({
 
 passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, username, password, done) => {
     loginAttempt();
-    // console.log( "email:" + username );
-    // console.log( "password: " + password );
 
     async function loginAttempt() {
-        console.log( "attempting to connect" );
         const client = await pool.connect();
         try {
             await client.query('BEGIN');
             var currentAccountData = await JSON.stringify(
                 client.query('SELECT user_id, first_name, last_name, user_name, email, password from enjoyer where email = $1',
                     [username], function (err, result) {
-                    // console.log( "getting here...");
                         if (err) {
                             return done(err);
                         }
@@ -36,10 +32,8 @@ passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, usernam
                         }
                         else
                         {
-                            // console.log( "Hash: " + bcrypt.hash(req.body.password, 5 ) );
                             bcrypt.compare(password, result.rows[0].password, (err, check) => {
                                 if (err) {
-                                    console.log('Error occured while checking password')
                                     return done();
                                 } else if (check) {
                                     return done(null, [{
@@ -47,7 +41,6 @@ passport.use('local', new LocalStrategy({passReqToCallback: true}, (req, usernam
                                         firstName: result.rows[0].first_name
                                     }]);
                                 } else {
-                                    console.log("Incorrect login details");
                                     req.flash('failure', 'Bad username or password!');
                                     return done(null, false);
                                 }

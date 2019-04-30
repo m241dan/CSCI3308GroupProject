@@ -6,7 +6,6 @@ const local_config = {
 	password: 'pwd'
 };
 const heroku_db_config = process.env.DATABASE_URL;
-console.log(process.env.DATABASE_URL)
 var config = local_config;
 
 const { Pool, Client } = require('pg');
@@ -15,11 +14,6 @@ if(typeof(heroku_db_config) != 'undefined'){
 	config = heroku_db_config;
 
 }
-else{
-	// console.log('else')
-	
-}
-// console.log(config)
 const pool = new Pool(config)
 
 
@@ -128,13 +122,8 @@ function insertIntentWorkout(email, exer_name, dist, rep, set, wght, dur, date){
 	// , dist, rep, set, wght, dur
 
 	pool.query (query_exercise_id, pass_me_one, (err,ex_id)=>{
-		console.log(ex_id)
-		console.log(ex_id.rows[0].exercise_id)
 		pass_me_two = [ex_id.rows[0].exercise_id, email, date]
-		// console.log('email in dbhandle');
-		// console.log(email)
 		pool.query(query_insert, pass_me_two, (err,results)=>{
-			// console.log(results)
 			if(err)
 			{
 				console.log(err)
