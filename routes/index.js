@@ -17,9 +17,7 @@ router.get('/', function(req, res, next) {
                 current_date: format_date,
                 workout_data: results.rows
             });
-            // console.log( results.rows )
         });
-        // console.log( req.user )
     }
     else {
         res.redirect('/login');
@@ -28,18 +26,10 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res){
-    // console.log('email check!');
-    // console.log(req.user['NULL'].email);
-    // console.log('CHECK')
-    // console.log(req.body);
-    // console.log(req.body.date);
     var new_date = req.body.date.replace(/-/g,",")
-    // console.log(new_date)
 
     if (req.body.date != ''){
-        // console.log(req.body.date);
         cur_date = new Date(new_date) 
-        // console.log(cur_date) 
     }
     
 
