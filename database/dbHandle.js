@@ -77,7 +77,7 @@ function getUserInfo(id,callback)
 
 function getUserByEmail(email,callback)
 {
-	pool.query('SELECT * from enjoyer where email=$1', [email], (err, result) => {
+	pool.query('SELECT COUNT(*) from enjoyer where email=$1;', [email], (err, result) => {
 		if( err )
 		{
 			console.log(err)
@@ -142,5 +142,6 @@ module.exports = {
 	getWorkoutIntentByDate,
 	insertUser,
 	getUserInfo,
+	getUserByEmail,
 	insertIntentWorkout
 };

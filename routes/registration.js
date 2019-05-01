@@ -10,10 +10,21 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/', async (req, res) => {
-    var pwd = await bcrypt.hash(req.body.passwordFirst, 5);
-    db.insertUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.emailAddress, pwd);
-    res.redirect('/');
+router.post('/', function(req, res) {
+	var pwd = bcrypt.hash(req.body.passwordFirst, 5);
+	db.getUserByEmail(req.body.emailAddress, (err, results) => {
+		console.log(results)
+		console.log(results.rows[0].count)
+		if( results.rows[0].count > 0 ) {
+			req.flash('failure', "Unfortunately that user email is already taken, if that is you please sign in, otherwise use a new email.");
+   			res.redirect('/login');
+		}
+    	else {
+	    	db.insertUser(req.body.firstName, req.body.lastName, req.body.userName, req.body.emailAddress, pwd);
+		    res.redirect('/');	
+    	}
+	});
+
 });
 
 module.exports = router;
