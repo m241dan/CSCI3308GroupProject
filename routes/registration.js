@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res) {
-	var pwd = bcrypt.hash(req.body.passwordFirst, 5);
+router.post('/', async function(req, res) {
+	var pwd = await bcrypt.hash(req.body.passwordFirst, 5);
 	db.getUserByEmail(req.body.emailAddress, (err, results) => {
 		console.log(results)
 		console.log(results.rows[0].count)
