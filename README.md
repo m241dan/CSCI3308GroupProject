@@ -17,5 +17,5 @@
 > To run the website use... **npm start**
 
 >## Live Version
->To see a live version of the site running on a VPS go to http://144.217.81.241:300
+>To see a live version of the site running on a VPS enter 144.217.81.241:300 in your browser.
   
