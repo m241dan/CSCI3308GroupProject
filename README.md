@@ -6,7 +6,13 @@
 > ![](https://github.com/m241dan/CSCI3308GroupProject/blob/master/public/RepoTree.png)
 
 >## Build, Run, and, Test Code
-> Our project is not buildable 
-> To run use...
-    npm start
+> Our project is not buildable, however, you will need to setup the database.
+
+> The easiest way to do this is to use our tables_create.sql file. 
+> 1) Create a database with an expected username and password
+> 2) Update the dbHandle.js with your username, password, and database name
+> 3) Inject the tables_create.sql into the database you created
+> 4) Profit
+
+> To run the website use... **npm start**
   
