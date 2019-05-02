@@ -20,5 +20,5 @@
 >To see a live version of the site running on a VPS enter 144.217.81.241:300 in your browser.
   
 >## Additional Resources
->The minute documents for all group project meetings for this project can be found in our mintues repository located at: https://github.com/m241dan/CSCI3308GroupProject_Minutes.
+>The minute documents for all group project meetings for this project can be found in our mintues repository located at https://github.com/m241dan/CSCI3308GroupProject_Minutes.
 >The milestone documents for all milestones for this project can be found in our milestone repository located at https://github.com/m241dan/CSCI3308GroupProject_Milestones.
