@@ -6,7 +6,7 @@
 > ![](https://github.com/m241dan/CSCI3308GroupProject/blob/master/public/RepoTree.png)
 
 >## Build, Run, and, Test Code
-> Our project is not buildable, however, you will need to setup the database.
+> Our project is buildable, however, you will need to setup the database.
 
 > The easiest way to do this is to use our tables_create.sql file. 
 > 1) Create a database with an expected username and password
@@ -15,4 +15,7 @@
 > 4) Profit
 
 > To run the website use... **npm start**
+
+>## Live Version
+>To see a live version of the site running on a VPS go to http://144.217.81.241:300
   
